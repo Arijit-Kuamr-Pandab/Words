@@ -25,12 +25,17 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
+import com.example.wordsapp.DetailActivity.Companion.LETTER
 
 /**
  * Adapter for the [RecyclerView] in [MainActivity].
  */
 class LetterAdapter :
     RecyclerView.Adapter<LetterAdapter.LetterViewHolder>() {
+
+//    companion object{
+//        const val LETTER = "letter"
+//    }
 
     // Generates a [CharRange] from 'A' to 'Z' and converts it to a list
     private val list = ('A').rangeTo('Z').toList()
@@ -70,7 +75,7 @@ class LetterAdapter :
                 DetailActivity::class.java
             )
 
-            intent.putExtra("letter",holder.button.text.toString())
+            intent.putExtra(LETTER,holder.button.text.toString())
             Toast.makeText(holder.view.context,holder.button.text.toString(),Toast.LENGTH_SHORT).show()
 
             holder.view.context.startActivity(intent)
