@@ -33,10 +33,6 @@ import com.example.wordsapp.DetailActivity.Companion.LETTER
 class LetterAdapter :
     RecyclerView.Adapter<LetterAdapter.LetterViewHolder>() {
 
-//    companion object{
-//        const val LETTER = "letter"
-//    }
-
     // Generates a [CharRange] from 'A' to 'Z' and converts it to a list
     private val list = ('A').rangeTo('Z').toList()
 
