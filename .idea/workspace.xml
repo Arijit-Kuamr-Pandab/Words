@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a56a6ee-cca0-4059-b7c4-787490b2ab76" name="Default Changelist" comment="" />
+    <list default="true" id="2a56a6ee-cca0-4059-b7c4-787490b2ab76" name="Default Changelist" comment="initial commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-basics-kotlin-words-app-starter/app/src/main/java/com/example/wordsapp/LetterAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android-basics-kotlin-words-app-starter/app/src/main/java/com/example/wordsapp/LetterAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-basics-kotlin-words-app-starter/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android-basics-kotlin-words-app-starter/build.gradle" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="layoutResourceFile" />
+        <option value="layoutResourceFile_vertical" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,6 +50,32 @@
       <option name="presentableId" value="Default" />
       <updated>1619412602941</updated>
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1619413315737</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1619413315738</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="579" y="311" width="824" height="491" key="AndroidCreateResourceDirectoryDialog" timestamp="1619417369944">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="579" y="311" width="824" height="491" key="AndroidCreateResourceDirectoryDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1619417369944" />
+    <state x="845" y="380" width="291" height="353" key="AndroidCreateXmlResourceDialog" timestamp="1619417351902">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="845" y="380" width="291" height="353" key="AndroidCreateXmlResourceDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1619417351902" />
+    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1619413754929">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="591" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053@72.27.1848.1053" timestamp="1619413754929" />
   </component>
 </project>

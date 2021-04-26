@@ -15,12 +15,14 @@
  */
 package com.example.wordsapp
 
+import android.content.Intent
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.Button
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 
@@ -37,7 +39,7 @@ class LetterAdapter :
      * Provides a reference for the views needed to display items in your list.
      */
     class LetterViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-        val button = view.findViewById<Button>(R.id.button_item)
+        val button:android.widget.Button = view.findViewById<Button>(R.id.button_item)
     }
 
     override fun getItemCount(): Int {
@@ -62,6 +64,18 @@ class LetterAdapter :
     override fun onBindViewHolder(holder: LetterViewHolder, position: Int) {
         val item = list.get(position)
         holder.button.text = item.toString()
+        holder.button.setOnClickListener {
+            val intent = Intent(
+                holder.view.context,
+                DetailActivity::class.java
+            )
+
+            intent.putExtra("letter",holder.button.text.toString())
+            Toast.makeText(holder.view.context,holder.button.text.toString(),Toast.LENGTH_SHORT).show()
+
+            holder.view.context.startActivity(intent)
+        }
+
     }
 
     // Setup custom accessibility delegate to set the text read with
