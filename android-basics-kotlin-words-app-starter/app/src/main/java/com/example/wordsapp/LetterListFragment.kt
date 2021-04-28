@@ -15,7 +15,7 @@ class LetterListFragment : Fragment() {
 
     private val binding get() = _binding!!
 
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerview: RecyclerView
 
     private var isLinearLayoutManager = true
 
@@ -32,7 +32,7 @@ class LetterListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recyclerView = binding.recyclerView // Binding class already created a property for recyclerView, and you don't need to use findViewById()
+        recyclerview = binding.recyclerView // Binding class already created a property for recyclerView, and you don't need to use findViewById()
         chooseLayout()
     }
 
@@ -41,6 +41,7 @@ class LetterListFragment : Fragment() {
         _binding = null  // View no longer exists
     }
 
+    // Implementation of Menu starts here
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.menu_layout,menu)
@@ -52,12 +53,13 @@ class LetterListFragment : Fragment() {
     private fun chooseLayout(){
         when(isLinearLayoutManager){
             true ->{
-                recyclerView.layoutManager = LinearLayoutManager(context)
+                recyclerview.layoutManager = LinearLayoutManager(context)
             }
             false ->{
-                recyclerView.layoutManager = GridLayoutManager(context,4)
+                recyclerview.layoutManager = GridLayoutManager(context,4)
             }
         }
+        recyclerview.adapter = LetterAdapter()
     }
     private fun setIcon(menuItem: MenuItem) {
         if (menuItem == null) {
@@ -91,4 +93,5 @@ class LetterListFragment : Fragment() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+    // Implementation of Menu ends here
 }

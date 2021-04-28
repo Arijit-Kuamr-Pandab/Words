@@ -25,8 +25,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Words">
         <activity
-            android:name=".DetailActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:name="" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
