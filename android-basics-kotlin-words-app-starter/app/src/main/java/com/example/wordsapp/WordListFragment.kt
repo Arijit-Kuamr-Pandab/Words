@@ -18,6 +18,8 @@ class WordListFragment : Fragment() {
 
     private val binding get() = _binding!!
 
+    private lateinit var letterId:String
+
     companion object{
         const val LETTER = "letter"
         const val SEARCH_PREFIX = "https://www.google.com/search?q="
@@ -33,7 +35,7 @@ class WordListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val recyclerview = binding.recyclerView
         recyclerview.layoutManager = LinearLayoutManager(requireContext())
-        recyclerview.adapter = WordAdapter(activity?.intent?.extras?.getString(LETTER).toString(),requireContext())
+        recyclerview.adapter = WordAdapter(letterId,requireContext())
         recyclerview.addItemDecoration(
                 DividerItemDecoration(requireContext(),DividerItemDecoration.VERTICAL)
         )
@@ -46,7 +48,9 @@ class WordListFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityMainBinding.inflate(layoutInflater)
+        arguments?.let {
+            letterId = it.getString(LETTER).toString()
+        }
     }
 
 

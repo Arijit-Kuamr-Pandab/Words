@@ -15,17 +15,15 @@
  */
 package com.example.wordsapp
 
-import android.content.Intent
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.Button
-import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.wordsapp.DetailActivity.Companion.LETTER
 
 /**
  * Adapter for the [RecyclerView] in [MainActivity].
@@ -66,17 +64,9 @@ class LetterAdapter :
         val item = list.get(position)
         holder.button.text = item.toString()
         holder.button.setOnClickListener {
-            val intent = Intent(
-                holder.view.context,
-                DetailActivity::class.java
+            //val action = LetterListFragmentDirections.actionLetterListFragmentToWordListFragment(letter = holder.button.text.toString())
+            holder.view.findNavController().navigate(LetterListFragmentDirections.actionLetterListFragmentToWordListFragment(letter = holder.button.text.toString()))
 
-                // WordListFragment::class.java
-            )
-
-            intent.putExtra(WordListFragment.LETTER,holder.button.text.toString())
-            Toast.makeText(holder.view.context,holder.button.text.toString(),Toast.LENGTH_SHORT).show()
-
-            holder.view.context.startActivity(intent)
         }
 
     }

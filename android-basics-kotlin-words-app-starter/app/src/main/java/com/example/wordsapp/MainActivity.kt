@@ -20,6 +20,10 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -33,6 +37,7 @@ class MainActivity : AppCompatActivity() {
 
     //part of Menu
     private var isLinearLayoutManager = true
+    private lateinit var navController:NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,61 +45,15 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
+
+        setupActionBarWithNavController(navController)
+
     }
 
-
-    //Menu part starts here
-//    private fun chooseLayout(){
-//        if (isLinearLayoutManager){
-//            recyclerView.layoutManager = LinearLayoutManager(this)
-//        }
-//        else{
-//            recyclerView.layoutManager = GridLayoutManager(this,4)
-//        }
-//        recyclerView.adapter = LetterAdapter()
-//    }
-//    private fun setIcon(menuItem:MenuItem){
-//        if (menuItem == null){
-//            return
-//        }
-//        else {
-//            menuItem.icon = if(isLinearLayoutManager){
-//                ContextCompat.getDrawable(this,R.drawable.ic_baseline_grid_on_24)
-//            } else {
-//                ContextCompat.getDrawable(this,R.drawable.ic_baseline_list_24)
-//            }
-//        }
-//    }
-//
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(R.menu.menu_layout,menu)
-//        val layoutButton = menu?.findItem(R.id.switchMenu)
-//        if (layoutButton != null) {
-//            setIcon(layoutButton)
-//        }
-//        return true
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//
-//        return when (item.itemId) {
-//            R.id.switchMenu -> {
-//                // Sets isLinearLayoutManager (a Boolean) to the opposite value
-//                isLinearLayoutManager = !isLinearLayoutManager
-//                // Sets layout and icon
-//                chooseLayout()
-//                setIcon(item)
-//
-//                return true
-//            }
-//            //  Otherwise, do nothing and use the core event handling
-//
-//            // when clauses require that all possible paths be accounted for explicitly,
-//            //  for instance both the true and false cases if the value is a Boolean,
-//            //  or an else to catch all unhandled cases.
-//            else -> super.onOptionsItemSelected(item)
-//        }
-//    }
-//    //layout choosing menu ends here
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
 
 }
