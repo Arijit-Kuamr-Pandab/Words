@@ -25,6 +25,13 @@ class WordListFragment : Fragment() {
         const val SEARCH_PREFIX = "https://www.google.com/search?q="
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            letterId = it.getString(LETTER).toString()
+        }
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentWordListBinding.inflate(inflater,container,false)
         val view = binding.root
@@ -45,14 +52,5 @@ class WordListFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            letterId = it.getString(LETTER).toString()
-        }
-    }
-
-
 
 }

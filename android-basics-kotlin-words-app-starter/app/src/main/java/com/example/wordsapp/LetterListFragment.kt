@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.wordsapp.databinding.FragmentLetterListBinding
 
 class LetterListFragment : Fragment() {
+
     private var _binding: FragmentLetterListBinding? = null // To implement view binding in LetterListFragment,
                                                             // We first need to get a nullable reference to FragmentLetterListBinding
 

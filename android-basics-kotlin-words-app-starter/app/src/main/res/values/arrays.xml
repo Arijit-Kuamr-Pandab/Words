@@ -15,9 +15,9 @@
      limitations under the License.
 -->
 <resources>
-    <string-array name="words">
+    <string-array name="Words">
+        <item>Arijit</item>
         <item>aargh</item>
-        <item>about</item>
         <item>acidic</item>
         <item>acne</item>
         <item>acrid</item>

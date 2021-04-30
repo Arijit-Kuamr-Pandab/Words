@@ -30,13 +30,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.wordsapp.databinding.ActivityMainBinding
 
 /**
- * Main Activity and entry point for the app. Displays a RecyclerView of letters.
+ * Main Activity and entry point for the app. Displays a Fragment.
  */
 class MainActivity : AppCompatActivity() {
-    private lateinit var recyclerView: RecyclerView
 
-    //part of Menu
-    private var isLinearLayoutManager = true
     private lateinit var navController:NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {

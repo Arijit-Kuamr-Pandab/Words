@@ -6,9 +6,4 @@
         android:title="Linear Menu"
         android:icon="@drawable/ic_baseline_list_24"
         app:showAsAction="always" />
-    <!-- <item
-        android:id="@+id/gridMenu"
-        android:title="Grid Menu"
-        android:icon="@drawable/ic_baseline_grid_on_24"
-        app:showAsAction="always"/> -->
 </menu>
